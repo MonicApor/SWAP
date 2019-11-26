@@ -1,0 +1,184 @@
+<% include partials/header.ejs%>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header Section -->
+	<header class="header-section">
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 text-center">
+						<!-- logo -->
+						<a href="" class="site-logo">
+							<img src="img/swapLogo.png" alt="">
+						</a>
+					</div>
+					<!-- search bar -->
+					<div class="col-lg-6">
+						<form class="header-search-form">
+							<input class="form-control" type="text" placeholder="Search on Swap">
+							<button><i class="flaticon-search"></i></button>
+						</form>
+					</div>
+					<div class="col-xl-4 text-center">
+						<div class="user-panel">
+							<div class="up-item">
+								<i class="flaticon-profile"></i>
+								<a href="/profile">Profile</a>
+							</div>
+							<div class="up-item">
+								<div class="shelf">
+									<i class="flaticon-padnote"></i>
+									<span class="badge">3</span>
+								</div>
+								<a href="/swapList">List</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Navigation -->
+		<nav class="main-navbar">
+			<div class="container">
+				<ul class="main-menu">
+					<li><a href="/home">HOME</a></li>
+					<li><a href="/aboutus">ABOUT US</a></li>
+					<li><a href="/category">CATEGORY</a>
+						<ul class="sub-menu">
+							<li><a href="/womendress">WOMEN</a></li>
+							<li><a href="/menshirts">MEN</a></li>
+							<li><a href="/babiesclothes">BABIES</a></li>
+							<li><a href="/electronics">ELECTRONICS</a></li>
+							<li><a href="/others">OTHERS</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- Header section end -->
+
+
+	<!-- Page info -->
+	<div class="page-top-info">
+		<div class="container">
+			<div class ="page-header">
+				<h4 data-shadow='dang!'>SWAP LIST Page</h4>
+			</div>
+			<div class="site-pagination">
+				<a href="/home">Home</a> /
+				<a href="/category">Categories</a>
+			</div>
+		</div>
+	</div>
+	<!-- Page info end -->
+
+	<!-- SwapList section  -->
+	<section class="swap-history-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="swap-list">
+						<div class="swap-list-section-title">
+							<h2>Swap List</h2>
+						</div>
+							<ul class="product-list">
+							<li>
+								<div class="pl-thumb"><img src="img/carousel/3.jpg" alt=""></div>
+								<div class="pl-thumb1"><h6>Samsung Note 8</h6></div>
+								<div class="pl-thumb2"><p>Justine Ray</p></div>
+								<div class="pl-thumb3"><p>USC Bunzel Building 4th Flr. Rm 483</p></div>
+							</li>
+							<li>
+								<div class="pl-thumb"><img src="img/swapList/relatedItems/4.jpg" alt=""></div>
+								<div class="pl-thumb1"><h6>HTC Note 7</h6></div>
+								<div class="pl-thumb2"><p>Villa Villaflor</p></div>
+								<div class="pl-thumb3"><p>USC Bunzel Building 4th Flr. Rm 485</p></div>
+							</li>
+							<li>
+								<div class="pl-thumb"><img src="img/swapList/relatedItems/6.jpg" alt=""></div>
+								<div class="pl-thumb1"><h6>Samsung Galaxy 8</h6></div>
+								<div class="pl-thumb2"><p>Kirk Loro</p></div>
+								<div class="pl-thumb3"><p>USC Bunzel Building 4th Flr. Rm 469</p></div>
+							</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Swap List section end -->
+
+	<!--swap List History-->
+	<section class="swap-history-section">
+		<div class="container">
+			<div class="swap-history-section-title">
+				<h2>Swap History</h2>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 order-1 order-lg-2 mb-5 mb-lg-0">
+					<div class="swap-history">
+						<h3>Successfully Swap Item List</h3>
+						<ul class="product-list">
+							<li>
+								<div class="pl-thumb"><img src="img/products/8.jpg" alt=""></div>
+								<h6>Channel Black Bah</h6>
+								<p>Jenny Park</p>
+							</li>
+							<li>
+								<div class="pl-thumb"><img src="img/products/10.jpg" alt=""></div>
+								<h6>Baby Crib</h6>
+								<p>Nam Yoo Hyuk</p>
+							</li>
+							<li>
+								<div class="pl-thumb"><img src="img/women/tops/7.jpg" alt=""></div>
+								<h6>Korean Long Sleeve Style</h6>
+								<p>Park Shin Hye</p>
+							</li>
+							<li>
+								<div class="pl-thumb"><img src="img/women/dresses/9.jpg" alt=""></div>
+								<h6>Formal Blue Dress</h6>
+								<p>Tine Fe Go</p>
+							</li>
+							<li>
+								<div class="pl-thumb"><img src="img/women/pants/6.jpg" alt=""></div>
+								<h6>Denim Skirt</h6>
+								<p>Anna Mae Chu</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-6 order-1 order-lg-2 mb-5 mb-lg-0">
+					<div class="swap-history">
+						<h3>List of Cancel Items</h3>
+						<ul class="product-list">
+							<li>
+								<div class="pl-thumb"><img src="img/women/footwear/1.jpg" alt=""></div>
+								<h6>Flip Flop Black Lace</h6>
+								<p>Chaeyoung Chearyoung</p>
+							</li>
+							<li>
+								<div class="pl-thumb"><img src="img/women/tops/2.jpg" alt=""></div>
+								<h6>Chiffon White Blouse</h6>
+								<p>Nayeon Shin</p>
+							</li>
+							<li>
+								<div class="pl-thumb"><img src="img/products/3.jpg" alt=""></div>
+								<h6>KIA CAR</h6>
+								<p>Park Boo Gum</p>
+							</li>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+<!-- Footer section -->
+<% include partials/footer.ejs %>

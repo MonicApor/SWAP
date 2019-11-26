@@ -1,0 +1,585 @@
+<% include partials/header.ejs%>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header Section -->
+	<header class="header-section">
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 text-center">
+            <!-- logo -->
+            <a href="" class="site-logo">
+              <img src="img/swapLogo.png" alt="">
+            </a>
+          </div>
+          <!-- search bar -->
+          <div class="col-lg-6">
+            <form class="header-search-form">
+              <input class="form-control " type="text" placeholder="Search on Swap">
+              <button><i class="flaticon-search"></i></button>
+            </form>
+          </div>
+          	<div class="col-xl-4 text-center">
+			<div class="user-panel">
+				<div class="up-item">
+					<i class="flaticon-profile"></i>
+					<a href="#" data-toggle="modal" data-target="#LoginForm">Log In</a>
+				</div>
+				<div class="up-item">
+					<div class="shelf">
+						<i class="flaticon-padnote"></i>
+						<span class="badge">0</span>
+					</div>
+					<a href="/swapList">List</a>
+				</div>
+			</div>
+			</div>
+    	</div>
+	</div>
+    </div>
+    <!-- Navigation -->
+    <nav class="main-navbar">
+			<div class="container">
+				<ul class="main-menu">
+					<li><a href="/home">HOME</a></li>
+					<li><a href="/aboutus">ABOUT US</a></li>
+					<li><a href="/category">CATEGORY</a>
+						<ul class="sub-menu">
+							<li><a href="/womendress">WOMEN</a></li>
+							<li><a href="/menshirts">MEN</a></li>
+							<li><a href="/babiesclothes">BABIES</a></li>
+							<li><a href="/electronics">ELECTRONICS</a></li>
+							<li><a href="/others">OTHERS</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+	</nav>
+</header>
+<!-- Header section end -->
+
+<!-- Modal Log-in-->
+
+<div class="modal fade" id="LoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title">Sign In</h4>
+        <div class="flaticon-cancel close" data-dismiss="modal"></div>
+      </div>
+      <form name="Login" class="form" method="GET" class="was-validated">
+      <div class="modal-body mx-3">
+        <div class="md-form mb-3">
+          <div class="form-group">
+          	<label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" name="uname" required>
+            <div class="invalid-feedback">Valid.</div>
+          </div>
+        </div>
+        <div class="md-form mb-3">
+        	<div class="form-group">
+            	<label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" name="pswd" required>
+                <div class="invalid-feedback">Valid.</div>
+            </div>  
+        </div>
+        <div class="md-form">
+        	<div class="d-flex bd-highlight mb-3">
+  				<div class="p-2 bd-highlight">
+  					<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  					<label class="form-check-label" for="defaultCheck1">Remember Me?</label>
+  				</div>
+ 				<div class="ml-auto p-2 bd-highlight">
+ 					<a href="#" data-toggle="modal" data-target="#RegisterForm">New to Swap? Register</a>
+ 				</div>
+			</div>
+        </div>
+        <div class="md-form">
+        	<div class="form-group d-flex justify-content-center">
+        		<button type="submit" class="btn btn-success btn-lg float-right text-white" id="submit">Login</button>
+        	</div>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+         <a href="#" data-toggle="modal" data-target="#ForgotPassword">Forgot Password?</a>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+<!-- Modal Log-in end -->
+
+<!-- Modal Register -->
+<div class="modal fade" id="RegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title">Sign Up</h4>
+        <div class="flaticon-cancel close" data-dismiss="modal"></div>
+      </div>
+      <form class="form" method="GET" class="was-validated">
+      <div class="modal-body mx-3">
+        <div class="md-form mb-4">
+          <div class="form-group">
+          	<label for="uname">Username</label>
+            <input type="text" id="uname" name="username" placeholder="kim_yeontan" class="form-control" class="input-xlarge" required="">
+            <div class="invalid-feedback">Valid.</div>
+          </div>
+        </div>
+        <div class="md-form mb-4">
+        	<div class="form-group">
+	        	<label for="email">E-mail</label>
+	            <div>
+	            	<input type="text" id="email" name="email" placeholder="tannie@zoho.com" class="form-control" class="input-xlarge" required="">
+	                <div class="invalid-feedback">Valid.</div>
+	            </div>
+	        </div>
+        </div>
+        <div class="md-form mb-4">
+        	<div class="form-group">
+        		<label for="pwd">Password</label>
+            	<input type="password" id="pwd" name="password" placeholder="" class="form-control" class="input-xlarge" required title="5 to 10 characters only" pattern=".{5,10}">
+                <div class="invalid-feedback">Valid.</div>
+            </div>  
+        </div>
+        <div class="md-form mb-4">
+        	<div class="form-group">
+        		<label for="password_confirm">Confirm Password</label>
+            	<input type="password" id="password_confirm" name="password_confirm" placeholder="" class="form-control" class="input-xlarge">
+                <div class="invalid-feedback">Valid.</div>
+            </div>  
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <a href="#"><button class="btn btn-success btn-lg" id="submit">Register</button></a>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+<!-- Modal Register end -->
+	
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item set-bg" data-setbg="img/h4.jpg" >
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 jumbotron">
+							<span>Swap not Shop</span>
+							<h1>you got me, i got you</h1>
+							<p>At swap people can save money, whether they are rich or poor. They get to see who picks their things, how happy they make other people with their generosity, and get to go “shopping” for free in what others have brought. The fortunate might bring a lot, and take less. The less fortunate bring a little but find a lot they can use. The experience of sharing openly makes the event very social, generous, giving and exciting to take part in. </p>	
+							<div class="buts">
+								<a href="/category" class="site-btn sb-line">EXPLORE</a>
+								<a href="/product" class="site-btn sb-white">SWAP NOW</a>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="hs-item set-bg" data-setbg="img/h2.jpg">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 jumbotron">
+							<span>Swap not Shop</span>
+							<h1>you got me, i got you</h1>
+							<p>At swap markets people save money, whether they are rich or poor. They get to see who picks their things, how happy they make other people with their generosity, and get to go “shopping” for free in what others have brought. The fortunate might bring a lot, and take less. The less fortunate bring a little but find a lot they can use. The experience of sharing openly makes the event very social, generous, giving and exciting to take part in. </p>
+							<div class="buts">
+								<a href="/category" class="site-btn sb-line">EXPLORE</a>
+								<a href="/product" class="site-btn sb-white">SWAP NOW</a>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="hs-item set-bg" data-setbg="img/h3.jpg">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 jumbotron">
+							<span>Swap not Shop</span>
+							<h1>you got me, i got you</h1>
+							<p>At swap markets people save money, whether they are rich or poor. They get to see who picks their things, how happy they make other people with their generosity, and get to go “shopping” for free in what others have brought. The fortunate might bring a lot, and take less. The less fortunate bring a little but find a lot they can use. The experience of sharing openly makes the event very social, generous, giving and exciting to take part in. </p>
+							<div class="buts">
+								<a href="/category" class="site-btn sb-line">EXPLORE</a>
+								<a href="/product" class="site-btn sb-white">SWAP NOW</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item set-bg" data-setbg="img/h1.jpg">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 jumbotron">
+							<span>Swap not Shop</span>
+							<h1>you got me, i got you</h1>
+							<p>At swap markets people save money, whether they are rich or poor. They get to see who picks their things, how happy they make other people with their generosity, and get to go “shopping” for free in what others have brought. The fortunate might bring a lot, and take less. The less fortunate bring a little but find a lot they can use. The experience of sharing openly makes the event very social, generous, giving and exciting to take part in.</p>
+							<div class="buts">
+								<a href="/category" class="site-btn sb-line">EXPLORE</a>
+								<a href="/product" class="site-btn sb-white">SWAP NOW</a>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item set-bg" data-setbg="img/h5.jpg">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 jumbotron">
+							<span>Swap not Shop</span>
+							<h1>you got me, i got you</h1>
+							<p>At swap markets people save money, whether they are rich or poor. They get to see who picks their things, how happy they make other people with their generosity, and get to go “shopping” for free in what others have brought. The fortunate might bring a lot, and take less. The less fortunate bring a little but find a lot they can use. The experience of sharing openly makes the event very social, generous, giving and exciting to take part in. </p>
+							<div class="buts">
+								<a href="/category" class="site-btn sb-line">EXPLORE</a>
+								<a href="/product" class="site-btn sb-white">SWAP NOW</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+	<!-- Features section -->
+	<section class="features-section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 p-0 feature">
+					<div class="feature-inner">
+						<div class="feature-icon">
+							<img src="img/icons/icon1.svg" alt="#">
+						</div>				
+						<h2>FAST & RELIABLE USERS</h2>		
+					</div>
+				</div>
+				<div class="col-md-4 p-0 feature">
+					<div class="feature-inner">
+						<div class="feature-icon">
+							<img src="img/icons/2.png" alt="#">
+						</div>				
+						<h2>BARTER PRODUCTS</h2>		
+					</div>
+				</div>
+				<div class="col-md-4 p-0 feature">
+					<div class="feature-inner">
+						<div class="feature-icon">
+							<img src="img/icons/icon2.png" alt="#">
+						</div>				
+						<h2>NO MONEY INVOLVED</h2>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Features section end -->
+
+	<!-- latest product section -->
+	<section class="top-letest-product-section">
+		<div class="container">
+			<div class="section-title">
+				<h2>RECENTLY ADDED ITEMS</h2>
+			</div>
+			<div class="product-slider owl-carousel">
+				<div class="product-item">
+					<div class="pi-pic">
+						<a href="/product"><img src="img/women/dresses/1.jpg" alt=""></a>
+						<div class="pi-links">
+							<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+							<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>YUKI YAMASHITA</h6>
+						<p>KOREAN DRESS</p>
+					</div>
+				</div>
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="img/carousel/1.jpg" alt="">
+						<div class="pi-links">
+							<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+							<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>XAIO YU</h6>
+						<p>VACUUM CLEANER</p>
+					</div>
+				</div>
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="img/carousel/2.jpg" alt="">
+						<div class="pi-links">
+							<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+							<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>ANTHONY GO</h6>
+						<p>ASUS NETBOOK</p>
+					</div>
+				</div>
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="img/carousel/3.jpg" alt="">
+						<div class="pi-links">
+							<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+							<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>SEBASTIAN CHU</h6>
+						<p>SAMSUNG J9s</p>
+					</div>
+				</div>
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="img/carousel/4.jpg" alt="">
+						<div class="pi-links">
+							<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+							<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>PARK SHIN HYE</h6>
+						<p>BICYCLE</p>
+					</div>
+				</div>
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="img/carousel/12.jpg" alt="">
+						<div class="pi-links">
+							<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+							<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>NAM YOO HYUK</h6>
+						<p>TUXEDO</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- letest product section end -->
+
+	<!-- Product filter section -->
+	<section class="product-filter-section">
+		<div class="container">
+			<div class="section-title">
+				<h2>BROWSE MORE ITEMS</h2>
+			</div>
+			<div class="categories">
+				<a href="/womendress" class=""><i class="flaticon-favorite"></i><span>WOMEN'S APPAREL</span></a>
+				<a href="/menshirts" class="men"><i class="flaticon-briefcase"></i><span>MEN'S APPAREL</span></a>
+				<a href="/electronics" class="gadgets"><i class="flaticon-headphones"></i><span>GADGETS</span></a>
+				<a href="/livingroom" class="appliances"><i class="flaticon-screen"></i><span>APPLIANCES</span></a>
+				<a href="/others" class="others"><i class="flaticon-store"></i><span>OTHERS</span></a>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="img/products/1.jpg" alt="">
+							<div class="pi-links">
+								<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+								<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>JUSTINE1 GO</h6>
+							<p>IPHONE 6</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="img/products/2.jpg" alt="">
+							<div class="pi-links">
+								<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+								<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>JUSTINE2 GO</h6>
+							<p>SAMSUNG Y9</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="img/products/3.jpg" alt="">
+							<div class="pi-links">
+								<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+								<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>JUSTINE3 GO</h6>
+							<p>KIA CAR</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="img/products/4.jpg" alt="">
+							<div class="pi-links">
+								<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+								<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>JUSTINE4 GO</h6>
+							<p>VY HELMET</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="img/products/5.jpg" alt="">
+							<div class="pi-links">
+								<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+								<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>JUSTINE5 GO</h6>
+							<p>MOUNTAIN BIKE</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="img/products/6.jpg" alt="">
+							<div class="pi-links">
+								<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+								<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>JUSTINE6 GO</h6>
+							<p>BABY CAR SEAT</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="img/products/7.jpg" alt="">
+							<div class="pi-links">
+								<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+								<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>JUSTINE7 GO</h6>
+							<p>SHOE CONVERSE</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="img/products/8.jpg" alt="">
+							<div class="pi-links">
+								<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+								<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>JUSTINE8 GO</h6>
+							<p>SPADE BAG</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="img/products/9.jpg" alt="">
+							<div class="pi-links">
+								<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+								<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>JUSTINE9 GO</h6>
+							<p>HIGH TECH REF</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="img/products/10.jpg" alt="">
+							<div class="pi-links">
+								<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+								<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>JUSTINE10 GO</h6>
+							<p>SPECIAL CRIB</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="img/products/11.jpg" alt="">
+							<div class="pi-links">
+								<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+								<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>JUSTINE11 GO</h6>
+							<p>COOKER PLUS</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="img/products/12.jpg" alt="">
+							<div class="pi-links">
+								<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>CHAT TO SWAP</span></a>
+								<a href="/swapList" class="wishlist-btn"><i class="flaticon-add"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>JUSTINE12 GO</h6>
+							<p>VXY CAMERA</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="text-center pt-5" id="loadMore">
+				<button class="site-btn sb-line sb-dark btn btn-outline-success">LOAD FOR MORE ITEMS</button>
+			</div>
+		</div>
+	</section>
+	<!-- Product filter section end -->
+
+	<!-- Banner section -->
+	<section class="banner">
+		<div class = "banner-set">
+			<marquee behavior = "scroll" direction = "left" scrollamount="30">
+				<img src="img/banner.jpg" alt="">
+			</marquee>
+		</div>
+	</section>
+	<!-- Banner section end-->
+	
+<% include partials/footer.ejs %>

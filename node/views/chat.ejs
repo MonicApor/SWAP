@@ -1,0 +1,91 @@
+<% include partials/header.chat.ejs%>
+    <!-- Page Preloder -->
+  <div id="preloder">
+    <div class="loader"></div>
+  </div>
+  <!-- header -->
+  <header class="header-section">
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 text-center">
+            <!-- logo -->
+            <a href="" class="site-logo">
+              <img src="img/swapLogo.png" alt="">
+            </a>
+          </div>
+          <!-- search bar -->
+          <div class="col-lg-6">
+            <form class="header-search-form">
+              <input class="form-control" type="text" placeholder="Search on Swap">
+              <button><i class="flaticon-search"></i></button>
+            </form>
+          </div>
+          <div class="col-xl-4 text-center">
+            <div class="user-panel">
+              <div class="up-item">
+                <i class="flaticon-profile"></i>
+                <a href="/profile">Profile</a>
+              </div>
+              <div class="up-item">
+                <div class="shelf">
+                  <i class="flaticon-padnote"></i>
+                  <span class="badge">3</span>
+                </div>
+                <a href="/swapList">List</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="main-navbar">
+      <div class="container">
+        <ul class="main-menu">
+          <li><a href="/home">HOME</a></li>
+          <li><a href="/aboutus">ABOUT US</a></li>
+          <li><a href="/category">CATEGORY</a>
+            <ul class="sub-menu">
+              <li><a href="/womendress">WOMEN</a></li>
+              <li><a href="/menshirts">MEN</a></li>
+              <li><a href="/babiesclothes">BABIES</a></li>
+              <li><a href="/electronics">ELECTRONICS</a></li>
+              <li><a href="/others">OTHERS</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Header section end -->
+
+  <!-- Chat -->
+<section>
+    
+  <div class="chatbox">
+    <div class="chat_window"> <!-- the whole box -->
+    <!-- header -->
+      <div class="top_menu"> 
+        <!-- leftside button -->
+        <div class="buttons">
+          <a href="/product" class="flaticon-cancel close"></a>
+        </div>
+        <div class="title">Chat</div> <!-- title -->
+      </div>
+      <!-- messages -->
+      <ul class="messages"></ul>
+      <div class="bottom_wrapper"> 
+          <form>
+            <div class="form-group">
+              <textarea class="form-control mytext" rows="3" placeholder="Type a message..."></textarea>
+            </div>
+          </form>
+        <button type="button" class="btn btn-success pull-right send_message">Send</button>
+      </div>
+    </div>
+</div>
+  </section>
+<!-- Chat end -->
+  
+<% include partials/footer.ejs %>
