@@ -4,6 +4,7 @@
 	<div class="loader"></div>
 </div>
 
+
 <!-- Header Section -->
 <header class="header-section">
 	<div class="header-top">
@@ -70,21 +71,19 @@
 				<h4 class="modal-title">Sign In</h4>
 				<div class="flaticon-cancel close" data-dismiss="modal"></div>
 			</div>
-			<form name="Login" class="form" method="GET" class="was-validated">
+			<form action="/save" name="Login" class="form" method="POST" class="was-validated" >
 				<div class="modal-body mx-3">
 					<div class="md-form mb-3">
 						<div class="form-group">
 							<label for="username">Username</label>
-							<input type="text" class="form-control" id="username" placeholder="Enter username"
-								name="uname" required>
+							<input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
 							<div class="invalid-feedback">Valid.</div>
 						</div>
 					</div>
 					<div class="md-form mb-3">
 						<div class="form-group">
 							<label for="password">Password</label>
-							<input type="password" class="form-control" id="password" placeholder="Enter password"
-								name="pswd" required>
+							<input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
 							<div class="invalid-feedback">Valid.</div>
 						</div>
 					</div>
@@ -123,7 +122,7 @@
 				<h4 class="modal-title">Sign Up</h4>
 				<div class="flaticon-cancel close" data-dismiss="modal"></div>
 			</div>
-			<form action="/register" class="form" method="POST" class="was-validated">
+			<form action="/createAccount" class="form" method="POST" class="was-validated" enctype="multipart/form-data">
 				<div class="modal-body mx-3">
 					<div class="md-form mb-4">
 						<div class="form-group">
@@ -144,11 +143,12 @@
 								class="form-control" class="input-xlarge" required="">
 							<div class="invalid-feedback">Valid.</div>
 						</div>
-						<div class="form-group">
-							<label for="imgur;">Profile Image Link:</label>
-							<input type="text" id="imgurl" name="imgurl" placeholder="Your profile image link"
-								class="form-control" class="input-xlarge" required="">
-							<div class="invalid-feedback">Valid.</div>
+						<div class="input-group mb-3">
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" required name="imgLink" id="inputGroupFile01"
+									aria-describedby="inputGroupFileAddon01">
+								<label class="custom-file-label" for="inputGroupFile01">Upload Profile Picture</label>
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="uname">Username</label>

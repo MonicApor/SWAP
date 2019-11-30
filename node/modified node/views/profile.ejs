@@ -74,10 +74,10 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 about-left text-center">
                   <div class="member">
-                    <img src="<%= profile.imgLink %>" class="img-fluid" alt="">
+                    <img src="<%= user.imgLink %>" class="img-fluid" alt="">
                     <div class="member-info">
                       <div class="member-info-content">
-                        <h4><%= profile.userName %></h4>
+                        <h4><%= user.username %></h4>
                         <div class="social">
                           <a href=""><i class="fa fa-twitter"></i></a>
                           <a href=""><i class="fa fa-facebook"></i></a>
@@ -90,14 +90,18 @@
                 </div>
 
                 <div class="col-lg-5 col-md-5 about-right">
-                    <h1><%= profile.firstName + " " + profile.lastName %> </h1></br>
-                    <h4>Location: <%= profile.Address %></h4>
+                    <h1><%= user.firstname + " " + user.lastname %> </h1></br>
+                    <h4>Location: <%= user.firstname %></h4>
                     <h4>Description about you as a trader</h4>
-                    <p><%= profile.Description %></p>
+                    <p><%= user.description %></p>
                 </div>
                 <div class="align-self-center mx-auto" id ="addButton">
                   <button type="submit" class="btn btn-success btn-lg text-white" id="submit" data-toggle="modal" data-target="#AddItem">Add Item to be Swapped</button>
                  </div>
+                 <form action="/logout" method="get">
+                  <button class="btn btn-primary btn-lg" type="submit" href="#" role="button">Logout</button>
+            
+                </form>
             </div>
         </div>
     </section>
