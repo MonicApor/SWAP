@@ -122,16 +122,18 @@
 						</div>
 						<div class="col-lg-4 col-sm-6">
 							<div class="product-item">
-								<div class="pi-pic">
-									<img src="img/women/dresses/2.jpg" alt="">
-									<div class="pi-links">
-										<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>Chat Owner</span></a>
+								<% items.forEach((item) => { %>
+									<div class="pi-pic">
+										<a href="/index/<%= item._id %>"><img src="<%= item.prodimage %>" alt=""></a>
+										<div class="pi-links">
+											<a href="/chat" class="add-card"><i class="flaticon-speech-bubble"></i><span>Chat Owner</span></a>
+										</div>
 									</div>
-								</div>
-								<div class="pi-text">
-									<h6>JUSTINE CHUA</h6>
-									<p>DRESS 2</p>
-								</div>
+									<div class="pi-text">
+										<h6>JUSTINE8 TAN</h6>
+										<p><%= item.productName %></p>
+									</div>
+								<% }); %>						
 							</div>
 						</div>
 						<div class="col-lg-4 col-sm-6">
