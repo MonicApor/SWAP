@@ -1,4 +1,36 @@
 
+.dropdown>.dropdown-menu {
+	top: 200%;
+	transition: 0.3s all ease-in-out;
+  }
+  .dropdown:hover>.dropdown-menu {
+	display: block;
+	top: 100%;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+	/*Without this, clicking will make it sticky*/
+	  pointer-events: none;
+  }
+
+/* for dropdown only - change the color of droodown */
+.dropdown .dropdown-menu {
+    background-color: wheat;
+}
+.dropdown .dropdown-item {
+    color: #ffffff;
+}
+.dropdown .dropdown-item:hover,
+.dropdown .dropdown-item:focus {
+    color: #333333;
+    background-color: rgba(255,255,255,.5);
+}
+.dropdown .btn-link,
+.dropdown i {
+    color: green;
+    padding: 1rem 1rem;
+}
+
 html,
 body {
 	height: 100%;

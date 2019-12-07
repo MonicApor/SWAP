@@ -159,8 +159,9 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="col-lg-12">
+			<% items.forEach((item) => { %>
 						<div class="product-pic-zoom">
-							<img class="product-big-img" src="img/Women/dresses/1.jpg" alt="">						
+							<img class="product-big-img" src="<%= item.prodimage %>" alt="">						
 						</div>
 					</div>
 				</div>
@@ -168,7 +169,7 @@
 				<div class="col-lg-6 product-details">
 					
 					<!-- Key Info -->
-					<h2 class="p-title">Product</h2>
+					<h2 class="p-title">Name of the Item: <%= item.productName %> </h2>
 					<h4 class="p-stock">Available</h4>
 					<div class="p-review">
 						<a href="">3 reviews</a>|<a href="">Add your review</a>
@@ -184,18 +185,18 @@
 							</div>
 							<div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 								<div class="panel-body">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
+									<!-- <p>user.description</p> -->
 								</div>
 							</div>
 						</div>
 						<div class="panel">
 							<div class="panel-header" id="headingTwo">
-								<button class="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">item details </button>
+								<button class="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Item details </button>
 							</div>
 							<div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 								<div class="panel-body">
 									<img src="./img/cards.png" alt="">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
+									<p><%= item.productDesc %></p>
 								</div>
 							</div>
 						</div>
@@ -207,6 +208,7 @@
 						<a href=""><i class="fa fa-twitter"></i></a>
 					</div>
 				</div>
+			<% }); %>
 			</div>
 		</div>
 	</section>

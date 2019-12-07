@@ -26,9 +26,19 @@
 				<div class="col-xl-4 text-center">
 					<div class="user-panel">
 						<div class="up-item">
-							<i class="flaticon-profile"></i>
-							<a href="#" data-toggle="modal" data-target="#LoginForm">Log In</a>
+								<div class="dropdown">
+										<button class="btn btn-link dropdown-toggle color" type="button" id="dropdownMenuButton"
+										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<i class="flaticon-profile"></i> Login
+									</button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item" href="/account_login">Sign In</a>
+										<a class="dropdown-item" href="/register">Register</a>
+										<a class="dropdown-item" href="/logout">Logout</a>
+									</div>
+								 </div> 
 						</div>
+						
 						<div class="up-item">
 							<div class="shelf">
 								<i class="flaticon-padnote"></i>
@@ -45,7 +55,7 @@
 	<nav class="main-navbar">
 		<div class="container">
 			<ul class="main-menu">
-				<li><a href="/home">HOME</a></li>
+				<li><a href="/">HOME</a></li>
 				<li><a href="/aboutus">ABOUT US</a></li>
 				<li><a href="/category">CATEGORY</a>
 					<ul class="sub-menu">
@@ -61,128 +71,6 @@
 	</nav>
 </header>
 <!-- Header section end -->
-
-<!-- Modal Log-in-->
-
-<div class="modal fade" id="LoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header text-center">
-				<h4 class="modal-title">Sign In</h4>
-				<div class="flaticon-cancel close" data-dismiss="modal"></div>
-			</div>
-			<form action="/save" name="Login" class="form" method="POST" class="was-validated" enctype="multipart/form-data>
-				<div class="modal-body mx-3">
-					<div class="md-form mb-3">
-						<div class="form-group">
-							<label for="username">Username</label>
-							<input type="text" class="form-control" id="username" name="userKey" placeholder="Enter username" required>
-							<div class="invalid-feedback">Valid.</div>
-						</div>
-					</div>
-					<div class="md-form mb-3">
-						<div class="form-group">
-							<label for="password">Password</label>
-							<input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
-							<div class="invalid-feedback">Valid.</div>
-						</div>
-					</div>
-					<div class="md-form">
-						<div class="d-flex bd-highlight mb-3">
-							<div class="p-2 bd-highlight">
-								<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-								<label class="form-check-label" for="defaultCheck1">Remember Me?</label>
-							</div>
-							<div class="ml-auto p-2 bd-highlight">
-								<a href="#" data-toggle="modal" data-target="#RegisterForm">New to Swap? Register</a>
-							</div>
-						</div>
-					</div>
-					<div class="md-form">
-						<div class="form-group d-flex justify-content-center">
-							<button type="submit" class="btn btn-success btn-lg float-right text-white"
-								id="submit">Login</button>
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer d-flex justify-content-center">
-					<a href="#" data-toggle="modal" data-target="#ForgotPassword">Forgot Password?</a>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-<!-- Modal Log-in end -->
-
-<!-- Modal Register -->
-<div class="modal fade" id="RegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header text-center">
-				<h4 class="modal-title">Sign Up</h4>
-				<div class="flaticon-cancel close" data-dismiss="modal"></div>
-			</div>
-			<form action="/createAccount" class="form" method="POST" class="was-validated" enctype="multipart/form-data">
-				<div class="modal-body mx-3">
-					<div class="md-form mb-4">
-						<div class="form-group">
-							<label for="fname">First Name:</label>
-							<input type="text" id="fname" name="firstname" placeholder="Enter your first name"
-								class="form-control" class="input-xlarge" required="">
-							<div class="invalid-feedback">Valid.</div>
-						</div>
-						<div class="form-group">
-							<label for="lname">Last Name:</label>
-							<input type="text" id="lname" name="lastname" placeholder="Enter your last name"
-								class="form-control" class="input-xlarge" required="">
-							<div class="invalid-feedback">Valid.</div>
-						</div>
-						<div class="form-group">
-							<label for="address">Address:</label>
-							<input type="text" id="address" name="address" placeholder="Enter your address"
-								class="form-control" class="input-xlarge" required="">
-							<div class="invalid-feedback">Valid.</div>
-						</div>
-						<div class="input-group mb-3">
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" required name="imgLink" id="inputGroupFile01"
-									aria-describedby="inputGroupFileAddon01">
-								<label class="custom-file-label" for="inputGroupFile01">Upload Profile Picture</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="uname">Username</label>
-							<input type="text" id="uname" name="username" placeholder="kim_yeontan" class="form-control"
-								class="input-xlarge" required="">
-							<div class="invalid-feedback">Valid.</div>
-						</div>
-						<div class="form-group">
-							<label for="email">E-mail</label>
-							<input type="text" id="email" name="email" placeholder="tannie@zoho.com"
-								class="form-control" class="input-xlarge" required="">
-							<div class="invalid-feedback">Valid.</div>
-						</div>
-						<div class="form-group">
-							<label for="pwd">Password</label>
-							<input type="password" id="pwd" name="password" placeholder="" class="form-control"
-								class="input-xlarge" required title="5 to 10 characters only" pattern=".{5,10}">
-							<div class="invalid-feedback">Valid.</div>
-						</div>
-						<div class="form-group">
-							<label for="description">Describe Yourself as a Trader: </label>
-							<textarea class="form-control" name="description" rows="3"></textarea>
-							<div class="invalid-feedback">Valid.</div>
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer d-flex justify-content-center">
-					<button type="submit" class="btn btn-success btn-lg" id="submit">Register</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-<!-- Modal Register end -->
 
 <section class="hero-section">
 	<div class="hero-slider owl-carousel">
