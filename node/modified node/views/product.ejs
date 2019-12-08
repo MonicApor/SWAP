@@ -59,96 +59,6 @@
 		</nav>
 	</header>
 	<!-- Header section end -->
-	<!-- Modal Swap-Form-->
-	<div class="modal fade" id="SwapForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  		<div class="modal-dialog" role="document">
-   			<div class="modal-content">
-      			<div class="modal-header text-success text-center">
-       				<h4 class="modal-title font-weight-bold">SWAP FORM</h4>
-        			<div class="flaticon-cancel close" data-dismiss="modal"></div>
-      			</div>
-      			<form name="Swap" class="form" method="GET" class="was-validated">
-     				<div class="modal-body mx-3">
-       					<div class="md-form mb-3">
-         					<div class="form-group">
-           						<label for="name">Name:</label>
-              					<input type="text" class="form-control" id="name" placeholder="Enter your Name" name="name" required>
-              					<div class="invalid-feedback">Valid.</div>
-         					</div>
-        				</div>
-        				<div class="custom-control custom-radio custom-control-inline">
-          					<input type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
-          					<label class="custom-control-label" for="defaultInline1">Male</label>
-        				</div>
-       					<div class="custom-control custom-radio custom-control-inline">
-          					<input type="radio" class="custom-control-input" id="defaultInline2" name="inlineDefaultRadiosExample">
-          					<label class="custom-control-label" for="defaultInline2">Female</label>
-        				</div>
-        				<div class="custom-control custom-radio custom-control-inline">
-         					<input type="radio" class="custom-control-input" id="defaultInline3" name="inlineDefaultRadiosExample">
-          					<label class="custom-control-label" for="defaultInline3">Others</label>
-          				</div>
-        				<div class="md-form mb-3">
-          					<div class="form-group">
-              					<label for="age">Age:</label>
-                				<input type="text" class="form-control" id="age" placeholder="Enter your age" name="age" required>
-                				<div class="invalid-feedback">Valid.</div>
-           					</div>  
-        				</div>
-        				<div class="md-form mb-3">
-          					<div class="form-group">
-              					<label for="pnum">Contact:</label>
-                				<input type="text" class="form-control" id="pnum" placeholder="Enter your number" name="pnum" required>
-                				<div class="invalid-feedback">Valid.</div>
-            				</div>  
-        				</div>
-        				<div class="md-form mb-3">
-          					<div class="form-group">
-              					<label for="address">Address for Meet-up:</label>
-                				<input type="text" class="form-control" id="address" placeholder="Enter the address" name="adress" required>
-                				<div class="invalid-feedback">Valid.</div>
-            				</div>  
-       		 			</div>
-       				</div>
-      	 			<div class="modal-footer d-flex justify-content-center">
-         				<div class="p-2 bd-highlight">
-         					<button type="submit" class="btn btn-success btn-lg float-left text-white" id="submit">Successfully Swapped</button>
-          				</div>
-          				<div class="ml-auto p-2 bd-highlight">
-            				<button class="btn btn-success btn-lg" data-toggle="modal" data-target="#CancelForm">Cancel Swap</button>
-          				</div>
-      				</div>
-    			</form>
-   		 	</div>
-  		</div>
-	</div>
-
-<div class="modal fade" id="CancelForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title">CANCELLATION FORM</h4>
-        <div class="flaticon-cancel close" data-dismiss="modal"></div>
-      </div>
-      <form name="Cancel" class="form" method="GET" class="was-validated">
-      <div class="modal-body mx-3">
-        <div class="md-form mb-3">
-          <div class="form-group">
-            <label for="reasonforcancellation">Reason/s for cancellation</label>
-            <textarea class="form-control" id="reasonforcancellation" rows="5"></textarea>
-            <div class="invalid-feedback">Valid.</div>
-          </div>
-        </div>
-       </div>
-      <div class="modal-footer d-flex justify-content-center">
-         <button type="submit" class="btn btn-success btn-lg float-right text-white" id="submit">SUBMIT</button>
-      </div>
-    </form>
-    </div>
-  </div>
-</div>
-	<!-- Modal Swap-Form end -->
 
 	<!-- product section -->
 	<section class="product-section">
@@ -159,9 +69,9 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="col-lg-12">
-			<% items.forEach((item) => { %>
+
 						<div class="product-pic-zoom">
-							<img class="product-big-img" src="<%= item.prodimage %>" alt="">						
+							<img class="product-big-img" src="prodimage" alt="">						
 						</div>
 					</div>
 				</div>
@@ -169,14 +79,16 @@
 				<div class="col-lg-6 product-details">
 					
 					<!-- Key Info -->
-					<h2 class="p-title">Name of the Item: <%= item.productName %> </h2>
-					<h4 class="p-stock">Available</h4>
+					<h2 class="p-title">Name of the Item:</h2>
+					<!-- <h4 class="p-stock">Available</h4> -->
 					<div class="p-review">
-						<a href="">3 reviews</a>|<a href="">Add your review</a>
+						<!-- <a href="">3 reviews</a>|<a href="">Add your review</a> -->
 					</div>
-					<a href="/chat" ><button type="button" class="btn btn-success btn-lg trigger">Chat to Swap</button></a>
-					<button class="btn btn-success btn-lg trigger" data-toggle="modal" data-target="#SwapForm">Exchange Item</button>
 					
+					<!-- Swap form -->
+					<a class="btn btn-success btn-lg trigger" href="/product/swap-form">Exchange Item</a>
+					<!-- Swap form end -->
+
 					<!-- More info... -->
 					<div id="accordion" class="accordion-area">
 						<div class="panel">
@@ -196,7 +108,6 @@
 							<div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 								<div class="panel-body">
 									<img src="./img/cards.png" alt="">
-									<p><%= item.productDesc %></p>
 								</div>
 							</div>
 						</div>
@@ -208,7 +119,6 @@
 						<a href=""><i class="fa fa-twitter"></i></a>
 					</div>
 				</div>
-			<% }); %>
 			</div>
 		</div>
 	</section>

@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const AccountModel = require('./models/AccountModel')
 const multer = require('multer');
 const Item = require('./models/item');
+const Request = require('./models/request');
 const expressSanitizer  = require('express-sanitizer');
 const passport = require("passport");
 const localStrategy = require("passport-local");
@@ -225,7 +226,7 @@ app.get("/index/:id", (req, res) => {
 // });
 
 
-app.get('/aboutus', (req, res) => {
+app.get('/about-us', (req, res) => {
     res.render("aboutus");
 });
 
@@ -233,19 +234,19 @@ app.get('/category', function (req, res) {
 	res.render("category");
 });
 
-app.get('/womendress', (req, res) => {
+app.get('category/women-dress', (req, res) => {
     res.render("womendress");
 });
 
-app.get('/womenfootwear', function (req, res) {
+app.get('category/women-footwear', function (req, res) {
 	res.render("womenfootwear");
 });
 
-app.get('/womenpants', (req, res) => {
+app.get('category/women-pants', (req, res) => {
     res.render("womenpants");
 });
 
-app.get('/womentops', function (req, res) {
+app.get('category/women-tops', function (req, res) {
 	res.render("womentops");
 });
 
@@ -253,18 +254,45 @@ app.get('/profile', (req, res) => {
     res.render("profile");
 });
 
-app.get('/swapList', (req, res) => {
-	res.render("swapList");
-});
+// app.get('/swap-list', (req, res) => {
+// 	res.render("swapList");
+// });
 
 app.get('/product', (req, res) => {
     res.render("product");
 });
 
-app.get('/chat', (req, res) => {
-    res.render("chat");
+app.get('/product/swap-form', (req, res) => {
+    res.render("swapForm");
 });
 
+//INDEX - show all campgrounds
+app.get("/swap-list", function(req, res){
+    // Get all campgrounds from DB
+    Request.find({}, function(err, allCampgrounds){
+       if(err){
+           console.log(err);
+       } else {
+          res.render("swapList",{request:allCampgrounds});
+       }
+    });
+});
+
+//CREATE 
+app.post("/pending", function(req, res){
+    var contact = req.body.contact;
+    var details = req.body.details;
+    var newRequest = {contact: contact, details: details}
+    Request.create(newRequest, function(error, newItem){
+        if(error) {
+            console.log("Error inserting.");
+            console.log(error);
+        } else {
+            console.log(newItem);
+            res.redirect("/swap-list");
+        }
+    });
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on Port:${PORT}`);
