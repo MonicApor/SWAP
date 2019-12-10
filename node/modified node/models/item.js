@@ -1,10 +1,22 @@
-const mongoose = require('mongoose');
+var mongoose = require("mongoose");
 
-const ItemSchema = new mongoose.Schema({
-    productName: String,
-    prodimage: String,
-    prodcat: String,
-    productDesc: String
+var itemSchema = new mongoose.Schema({
+   name: String,
+   image: String,
+   description: String,
+   author: {
+      id: {
+         type: mongoose.Schema.Types.ObjectId,
+         ref: "User"
+      },
+      username: String
+   }
+   // comments: [
+   //    {
+   //       type: mongoose.Schema.Types.ObjectId,
+   //       ref: "Comment"
+   //    }
+   // ]
 });
 
-module.exports = mongoose.model("Item", ItemSchema);
+module.exports = mongoose.model("Item", itemSchema);

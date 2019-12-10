@@ -1,29 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>SWAP</title>
 	<!-- icon link -->
-	<link rel = "icon" href = "img/swapIcon.png"> 
+	<link rel="icon" href="img/swapIcon.png">
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Favicon -->
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<link href="img/favicon.ico" rel="shortcut icon" />
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
 
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/flaticon.css"/>
-	<link rel="stylesheet" href="css/slicknav.metain.css"/>
-	<link rel="stylesheet" href="css/jquery-ui.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
-	<link rel="stylesheet" href="css/animate.css"/>
-	<link rel="stylesheet" href="css/mystyle.css"/>
-
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/flaticon.css" />
+	<link rel="stylesheet" href="css/slicknav.metain.css" />
+	<link rel="stylesheet" href="css/jquery-ui.min.css" />
+	<link rel="stylesheet" href="css/owl.carousel.min.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/mystyle.css" />
+	<link rel="stylesheet" href="css/profile.css" />
 </head>
+
 <body>
+
+	<!-- Header Section -->
+	<header class="header-section">
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 text-center">
+						<!-- logo -->
+						<a href="" class="site-logo">
+							<img src="img/swapLogo.png" alt="">
+						</a>
+					</div>
+					<!-- search bar -->
+					<div class="col-lg-6">
+						<form class="header-search-form">
+							<input class="form-control " type="text" placeholder="Search on Swap">
+							<button><i class="flaticon-search"></i></button>
+						</form>
+					</div>
+					<div class="col-xl-4 text-center">
+						<div class="user-panel">
+							<div class="up-item">
+								<div class="dropdown">
+									<% if(!currentUser){ %>
+									<button class="btn btn-link dropdown-toggle color" type="button"
+										id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">
+										<i class="flaticon-profile"></i> Login </button>
+									<li><a href="/login">Login</a></li>
+									<li><a href="/register">Sign Up</a></li>
+									<% } else { %>
+									<button class="btn btn-link dropdown-toggle color" type="button"
+										id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">
+										<i class="flaticon-profile"></i> <%= currentUser.username %> </button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item" href="/logout">Logout</a>
+									</div>
+									<% } %>
+								</div>
+							</div>
+							<div class="up-item">
+								<div class="shelf">
+									<i class="flaticon-padnote"></i>
+									<span class="badge">0</span>
+								</div>
+								<a href="#">List</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>

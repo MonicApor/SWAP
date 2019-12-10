@@ -1,110 +1,37 @@
-<% include partials/header.ejs%>
-    <!-- Page Preloder -->
-  <div id="preloder">
-    <div class="loader"></div>
-  </div>
-  <!-- header -->
-  <header class="header-section">
-    <div class="header-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-2 text-center">
-            <!-- logo -->
-            <a href="" class="site-logo">
-              <img src="img/swapLogo.png" alt="">
-            </a>
+
+  <% include partials/header.login.ejs%>
+  <div class="container">
+    <div class="row">
+        <div id="signupbox" style="margin-top:50px;" class="mainbox col-md-10 col-md-offset-4 col-sm-7 col-sm-offset-8">
+      <div class="col-lg-6 mx-auto">
+        <div class="card bg-dark text-white">
+          <div class="card-header text-center">
+            <h2>POST AN ITEM</h2>
           </div>
-          <!-- search bar -->
-          <div class="col-lg-6">
-            <form class="header-search-form">
-              <input class="form-control" type="text" placeholder="Search on Swap">
-              <button><i class="flaticon-search"></i></button>
+          <div class="card-body">
+            <form action="/items" class= "ui form" method="POST" class="was-validated">
+              <div class="form-group">
+                <label for="prodname">Name of the Item:</label>
+                <input type="text" class="form-control" id="prodname" name="name" placeholder="Item Name" name="name"
+                  required>
+              </div>
+              <div class="form-group">
+                <label for="imgurl;">Product Image Link:</label>
+                <input type="text" id="imgurl" name="image" placeholder="Image Url" class="form-control"
+                  class="input-xlarge" required="">
+              </div>
+              <div class="form-group">
+                <label for="desc">Product Description: </label>
+                <textarea class="form-control" name="description" id="description" placeholder="Input Item Description"
+                  rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-lg btn-success btn-block">POST!</button>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </div>
-    <!-- Navigation -->
-    <nav class="main-navbar">
-      <div class="container">
-        <ul class="main-menu">
-          <li><a href="/home">HOME</a></li>
-          <li><a href="/aboutus">ABOUT US</a></li>
-          <li><a href="/category">CATEGORY</a>
-            <ul class="sub-menu">
-              <li><a href="/womendress">WOMEN</a></li>
-              <li><a href="#">MEN</a></li>
-              <li><a href="#">BABIES</a></li>
-              <li><a href="#">ELECTRONICS</a></li>
-              <li><a href="#">OTHERS</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- Header section end -->
-
-  <!-- log-in  -->
-<div class="container">
-        <div class="row">
-          <div class="col-lg-6 mx-auto">
-            <div class="card bg-dark text-white">
-                <div class="card-header text-center">
-                   <h2>POST AN ITEM</h2>
-                </div>
-                <div class="card-body">
-                  <form action="/additem" class="ui form" method="POST" class="was-validated">
-                    <div class="form-group">
-                       <label for="prodname">Name of the Item:</label>
-                        <input type="text" class="form-control" id="prodname" name="item[productName]" placeholder="Item Name" name="name" required>
-                        <div class="invalid-feedback">Valid.</div>
-                    </div>
-                    <div class="form-group">
-							        <label for="desc">Product Description: </label>
-							        <textarea class="form-control" name="proddesc" id="item[productDesc]" placeholder="Input Item Description"rows="3"></textarea>
-							        <div class="invalid-feedback">Valid.</div>
-				          	</div>
-                    <div class="form-group">
-							        <label for="imgurl;">Product Image Link:</label>
-						        	<input type="text" id="imgurl" name="item[prodimage]" placeholder="Item"
-							      	class="form-control" class="input-xlarge" required="">
-						        	<div class="invalid-feedback">Valid.</div>
-                      </div>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <label class="input-group-text" for="categories">Category</label>
-                        </div>
-                        <select class="custom-select" id="categories" name="item[prodcat]">
-                          <option selected>Choose...</option>
-                          <option value="1">Dresses</option>
-                          <option value="2">Tops and Blouses</option>
-                          <option value="3">Pants and Shorts for Women</option>
-                          <option value="4">Shoes and Sandals for Women</option>
-                          <option value="5">Men's Shirt</option>
-                          <option value="6">Men's Pants and Shorts</option>
-                          <option value="7">Men's Footwear</option>
-                          <option value="8">Children clothes</option>
-                          <option value="9">Children's stuffs</option>
-                          <option value="10">Children's toys</option>
-                          <option value="11">Electronics</option>
-                          <option value="12">For Kitchen</option>
-                          <option value="13">For livinig room</option>
-                          <option value="14">Others</option>
-                        </select>
-                      </div>
-                    <div class="md-form">
-                     <div class="d-flex bd-highlight mb-3">
-                      <div class="justify-content-center">
-                        <button type="submit" class="btn btn-success btn-lg text-white" id="submit">POST</button>
-                      </div>
-                     </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
-<!-- Footer section -->
-<% include partials/footer.ejs %>
+  </div>
+  <% include partials/footer.login.ejs%>
